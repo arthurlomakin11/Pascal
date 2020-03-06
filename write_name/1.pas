@@ -1,0 +1,8 @@
+D:\Pascal\carantine\tasks\rectangle_S\1.pasprogram write_name;
+uses crt;
+var file_t: text;
+str: char;
+begin
+    clrscr;
+    assign(file_t, 'text.txt');
+    reset(file_t

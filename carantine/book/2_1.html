@@ -1,0 +1,123 @@
+<html>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<LINK REL=STYLESHEET TYPE="text/css" href="mystyle.css">
+</HEAD>
+<body>
+<p>
+<a href='menu2.html'>Назад</a>
+<a href='2_2.html'>Вперед</a>
+<a href='menu2.html'>Зміст</a>
+</p>
+<h1>
+Приклад програми на Паскалі
+</h1>
+<table align=center>
+<tr><td>
+Program F1; {ім’я програми, необов’язкове}<br>
+{розділ даних}<br>
+Const alpha=2; beta=3; <br>
+Var c:byte;<br>
+{розділ операторів}<br>
+Begin <br>
+C:= alpha + beta;<br>
+Writeln(c)<br>
+End.
+</td></tr>
+</table>
+<p>
+У цій програмі дано два цілих числа alpha=2 та beta=3. Вони додаються та їх сума C виводиться на екран.
+</P>
+<p>Між зарезервованими словами Program та Begin розділ даних.
+Дані тут alpha, beta (вхідні, ті що дано) та C (вихідні, ті що отримали).
+</p>
+<p>
+Між зарезервованими словами Begin та End розділ операторів, які виконують дії з даними. 
+Оператори: присвоювання C:=alpha+beta (результат alpha+beta  присвоюється c) та Writeln(c) вивід результату c на екран.
+</p>
+
+<p>
+Program, Begin, End, Const, Var,  byte – зарезервовані слова.</p>
+<p>alpha, beta, c – імена даних (вони можуть бути іншими), </p>
+<p>Writeln –оператор виводу значення на екран.
+</p>
+<h1>
+Особливості написання тексту програми:
+</h1>
+<ul>
+<li>Програма може бути написана великими та маленькими літерами;
+<table align=center>
+<tr>
+<td>BEGIN <br>END.</td>
+<td>Begin<br>End.</td>
+<td>BeGiN <br>eNd. </td>
+</tr>
+</table>
+<li>Текст програми можна писати у один рядок (не більше 127 символів), а можна кожний оператор на окремому рядку;
+<table align=center>
+<tr>
+<td>Begin Wtite (‘yes’) end.</td>
+<td>Begin <br>
+Wtite(‘yes’) <br>
+end.<br>
+</td>
+</tr>
+</table>
+<li>Після кожного оператора ставиться символ «;» крапка з комою. Перед End крапку з комою можна не ставити. 
+<li>В дробових числах, ціла частина від дробовий відокремлюється крапкою (23.6); 
+<li>Наприкінці програми крапка.
+</ul>
+<h1>Використання пробілів у програмі</h1>
+<ul>
+<li>Пробіли не ставлять у середині зарезервованих слів та інших імен 
+<table align=center>
+<tr>
+<th>Не можна</th><th> Можна</th>
+</tr>
+<tr>
+<td>B e g i n</td><td> Begin</td>
+</tr>
+<tr>
+<td>W r i t e l n</td><td>Writeln </td>
+</tr>
+<tr>
+<td>а l p h a</td><td>alpha </td>
+</tr>
+</table>
+<li>Пробіли обов’язково ставляться між словами, якщо немає інших розділювачів  (дужки, знаки арифметичних дій, знаки пунктуації).
+<table align=center>
+<tr>
+<th>Фрагмент програми</th><th> Обов’язкові пробіли</th>
+</tr>
+<tr>
+<td>Const alpha =2; beta  =3;</td><td> між Const та alpha</td>
+</tr>
+<tr>
+<td>Var c:byte;</td><td>між Var та c </td>
+</tr>
+<tr>
+<td>Begin  C:=alpha+beta;</td><td>між Begin  та C </td>
+</tr>
+</table>
+<li>В інших випадках пробіли ставити не обов’язково.
+<table align=center>
+<tr>
+<th>Можна 	так</th><th> Можна і так</th>
+</tr>
+<tr>
+<td>Var c:byte;</td><td> Var c : byte ;</td>
+</tr>
+<tr>
+<td>C:=alpha+beta;Writeln(c);</td><td>C := alpha + beta  ; Writeln  ( c  ); </td>
+</tr>
+
+</table>
+
+</ul>
+<p>
+<a href='menu2.html'>Назад</a>
+<a href='2_2.html'>Вперед</a>
+<a href='menu2.html'>Зміст</a>
+</p>
+</body>
+</html>

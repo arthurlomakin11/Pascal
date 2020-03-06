@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<LINK REL=STYLESHEET TYPE="text/css" href="mystyle.css">
+</head>
+<body>
+<p>
+<a href=3_13.html>Назад</a>
+<a href=Menu3.html>Зміст</a>
+<a href=3_15.html>Вперед </a>
+</p>
+<h1>Вкладені умовні оператори.</h1>
+<table align=center>
+<tr><td>
+<pre>IF B1 THEN  S1
+  ELSE
+    IF B2 THEN S2
+      ELSE 
+         IF B3 THEN  S3  ELSE S4; </pre>
+</td></tr></table>
+<p>Вкладені умовні оператори використовуються замість декількох неповних операторів:</p> 
+<ul>
+<li>Оператор S1 виконується якщо умова B1 вірна.
+<li>Оператор S2 виконується якщо умова B1 невірна, а умова B2 вірна.
+<li>Оператор S3 виконується якщо умова B1 невірна, умова B2 невірна, а умова B3 вірна.
+<li>Оператор S4 виконується у всіх інших випадках.
+</ul>
+<p>Переваги використання: виконуються скоріше, останню, найскладнішу умову можна не записувати.</p>
+<p>Написана вище конструкція на блок-схемі відображається так:</p>
+<h4 align=center><img src="3_14/image001.gif"></h4>
+<h2>Приклади роботи оператору</h2>
+<p>Оператори, що виконуються у програмі виділені жирним.</p>
+<table align=cener>
+<tr> <th width=400> Програма </th> <th>Результат роботи програми </th></tr>
+<tr><td>
+Program F1;<br>
+<b>Const w=5;</b><br>
+var y:integer;<br>
+begin<br>
+<b>if w<-5 </b>then y:=3<br>
+<b>else if w<0 </b>then y:=1<br>
+<b>else   y:=2;<br>
+writeln(y);</b><br>
+end.
+</td><td>
+2</td></tr>
+<tr><td>
+Program F2;<br>
+<b>Const w=-15;</b><br>
+var y:integer;<br>
+begin<br>
+<b>if w<-5 then y:=3</b><br>
+else if w<0 then y:=1<br>
+else   y:=2;<br>
+<b>writeln(y);</b><br>
+end.	
+</td><td>
+3</td></tr>
+<tr><td>
+Program F3;<br>
+<b>Const w=15;</b><br>
+var y:integer;<br>
+begin<br>
+<b>y:=100;<br>
+if w<-5 </b>then y:=3<br>
+<b>else if w<0</b> then y:=1<br>
+<b>else if w<10 </b>then y:=2;<br>
+<b>writeln(y);</b><br>
+end.	
+</td><td>
+100</td></tr>
+</table>
+
+
+<p>
+<a href=3_13.html>Назад</a>
+<a href=Menu3.html>Зміст</a>
+<a href=3_15.html>Вперед </a>
+</p>
+</body>
+</html>

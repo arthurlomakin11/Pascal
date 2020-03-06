@@ -1,0 +1,124 @@
+<html>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<LINK REL=STYLESHEET TYPE="text/css" href="mystyle.css">. 
+</HEAD>
+<body>
+<p>
+<a href='2_15.html'>Назад</a>
+<a href='3_2.html'>Вперед</a>
+<a href='menu3.html'>Зміст</a>
+</p>
+<h1>
+Повний умовний оператор
+</h1>
+<p>
+Повний умовний оператор використовується, якщо, в залежності від деякої умови, потрібно виконати одну з двох груп операторів.
+</P>
+<table align=center>
+
+<tr>
+<td>
+<pre>
+IF B THEN 
+  BEGIN 
+   S1;S2;…Sn;
+  END
+ELSE 
+  BEGIN 
+   P1;P2;…Pn;
+  END;
+T1;
+</pre>
+</td>
+</tr>
+</table>
+
+<p>
+Якщо умова B вірна, то  виконуються оператори S1, S2,… Sn, якщо умова не вірна, то виконуються оператори P1,P2,… Pn. Потім виконується оператор T1
+</p>
+<p>Написана вище конструкція на блок-схемі відображається так:</p>
+<h4 align=center><img src="3_1/image001.gif"></h4>
+<p>
+Завжди виконується одна з двох груп операторів, або S1, S2,… Sn або P1,P2,… Pn.
+</p>
+<p>
+Не може бути випадків, коли виконуються обидві групи операторів.
+</p>
+<p>
+Не може бути випадків, коли не виконується ні одна з груп операторів.
+</p>
+ 
+
+<h2>
+Приклади роботи оператору
+</h2>
+<p>У прикладі, в залежності від значення x виконуються різні оператори. Оператори, що виконуються у програмі виділені жирним.</p>
+<table align=center>
+<tr><th width=300>Програма</th><th> Пояснення</th><th> На екрані</th></tr>
+<tr>
+<td>
+Program p1;<br>
+Var x:integer;<br>
+begin<br>
+<b>X:=-5;<br>
+IF X<0 THEN <br>
+ BEGIN  <br>
+  x:=x+5;<br>
+  writeln(x)<br>
+ END</b><br>
+ELSE <br>
+ BEGIN <br>
+  X:=x*2;<br>
+  writeln(x) <br>
+ END;<br>
+<b>Writeln(‘кінець’)</b><br>
+End.
+</td><td> X:=-5;<br>
+Оскільки  X<0 (умова вірна), то  виконуються оператори, що стоять після THEN, тобто x:=x+5;writeln(x). Ті оператори, що стоять після ELSE пропускаються і потім виконується оператор <br>Writeln(‘кінець’).
+</td>
+<td>0<br>
+кінець
+</td>
+</tr>
+<tr>
+<td>
+Program p2;<br>
+Var x:integer;<br>
+begin<br>
+<b>X:=5;<br>
+IF X<0 </b>THEN  <br>
+ BEGIN <br>
+  x:=x+5;<br>
+  writeln(x)<br>
+ END<br>
+<b>ELSE <br>
+ BEGIN <br>
+  X:=x*2;<br>
+  writeln(x)<br>
+ END;<br>
+Writeln(‘кінець’)</b><br>
+End.
+</td><td>X:=5;<br>
+Оскільки  X>=0 (умова не вірна), то ті оператори, що стоять після THEN пропускаються і виконуються оператори, що стоять після ELSE тобто
+X:=x*2;writeln(x).<br>
+Потім виконується оператор <br>Writeln(‘кінець’).
+ </td>
+<td>10<br>
+кінець
+</td>
+</tr>
+</table>
+<h3>Блок-схема програми</h3>
+
+<h4 align=center><img src="3_1/image002.gif"></h4>
+<p>
+<a href='2_15.html'>Назад</a>
+<a href='3_2.html'>Вперед</a>
+<a href='menu3.html'>Зміст</a>
+</p>
+
+
+</body>
+</p>
+</html>

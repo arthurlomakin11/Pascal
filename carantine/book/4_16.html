@@ -1,0 +1,482 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<LINK REL=STYLESHEET TYPE="text/css" href="mystyle.css">
+</head>
+<body>
+<p>
+<a href='4_15.html'> Назад </a>
+<a href='Menu4.html'> Зміст </a>
+<a href='4_17.html'> Вперед </a>
+</p>
+<h1>Задачі на вивід чисел у вигляді таблиці</h1>
+<h2>Приклад 1</h2>
+<p>Надрукувати  в рядок числа  1 2 3 4 5. Ми вже писали такі програми:
+</p>
+<h3>Програма</h3>
+<table align=center>
+<tr><td>
+var j:byte;<br>
+begin<br>
+for j:=1 to 5 do write(j,' ');<br>
+end.
+</td>
+</tr>
+</table>
+
+<h2>Приклад 2</h2>
+<p>Надрукувати  в числа у вигляді таблиці:</p>
+<ul>  
+1 2 3 4 5<br>
+  1 2 3 4 5<br>
+  1 2 3 4 5
+</ul>
+<p>Ясно, що фрагмент програми, який друкує числа від 1 до 5 (for j:=1 to 5 do write(j,' ')) потрібно повторити 3 рази. Для повторення використовується теж оператор циклу (for i:=1 to 3 do). Щоб кожний рядок починався від краю екрана використовується оператор writeln без параметрів.
+</p>
+<h3>Програма</h3>
+<table align=center>
+<tr><td>
+Program a;<br>
+var i,j:byte;<br>
+begin<br>
+for i:=1 to 3 do<br>
+begin<br>
+writeln;<br>
+for j:=1 to 5 do write(j,' ');<br>
+end;<br>
+end.
+</td>
+</tr>
+</table>
+<p>
+В цій програмі : параметр зовнішнього циклу i – номер рядку, який друкується, параметр внутрішнього циклу j – число, яке виводиться на екран. Скільки потрібно рядків, стільки повинно бути витків зовнішнього циклу. Скільки потрібно чисел у кожному рядку, стільки повинно бути витків внутрішнього циклу.
+</p>
+<h3>Блок–схема програми</h3>
+<h4 align=center><img src="4_16/image001.gif"></h4>
+<h2> Термінологія та правила роботи вкладених циклів</h2>
+<table align=center>
+<tr><td>
+<ol>
+<li>Цикл for i:=1 to 3 do називається зовнішнім циклом.
+<li>Цикл for j:=1 to 5 do називається внутрішнім циклом, бо він вкладений у цикл for i:=1 to 3 do.
+<li>Параметри зовнішнього та внутрішнього циклів – це змінні з <b>різними </b>іменами.
+<li>Для кожного витку зовнішнього циклу виконуються всі витки внутрішнього циклу.
+</ol>
+</td>
+</tr>
+</table>
+<h3>Трасування програми </h3>
+<p>
+У приведеній нижче таблиці для нашого прикладу проводиться „трасування” програми, тобто програма виконується по крокам, вказуються оператори, що виконуються, відповідні зміни значень змінних та вигляд екрану.  
+</p>
+<table align=center>
+<tr><th>Оператор</th><th> i </th><th> j </th><th> Екран </th></tr>
+<tr><td>for i:=1 to 3 do</td><td>&nbsp;1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Writeln</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;Перевод курсору на початок 1-го рядку</td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;1</td><td>1 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;2</td><td>1 2 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;3</td><td>1 2 3 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;4</td><td>1 2 3 4 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;5</td><td>1 2 3 4 5</td></tr>
+<tr><td> for i:=1 to 3 do </td><td>&nbsp;2</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td> Writeln</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;Перевод курсору на початок 2-го рядку</td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;1</td><td>1 2 3 4 5<br>1 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;2</td><td>1 2 3 4 5<br>1 2 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;3</td><td>1 2 3 4 5<br>1 2 3 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ') </td><td>&nbsp;</td><td>&nbsp;4</td><td>1 2 3 4 5<br>1 2 3 4</td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ') </td><td>&nbsp;</td><td>&nbsp;5</td><td>1 2 3 4 5<br>1 2 3 4 5</td></tr>
+<tr><td> for i:=1 to 3 do</td><td>&nbsp;3</td><td>&nbsp;</td><td>&nbsp;Останній виток зовнішнього циклу</td></tr>
+<tr><td>Writeln</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;Перевод курсору на початок 3-го рядку</td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;1</td><td>1 2 3 4 5<br>1 2 3 4 5<br>1 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;2</td><td>1 2 3 4 5<br>1 2 3 4 5<br>1 2 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;3</td><td>1 2 3 4 5<br>1 2 3 4 5<br>1 2 3 </td></tr>
+<tr><td> for j:=1 to 5 do write(j,' ')</td><td>&nbsp;</td><td>&nbsp;4</td><td>1 2 3 4 5<br>1 2 3 4 5<br>1 2 3 4 </td></tr>
+<tr><td>for j:=1 to 5 do write(j,' ') </td><td>&nbsp;</td><td>&nbsp;5</td><td>1 2 3 4 5<br>1 2 3 4 5<br>1 2 3 4 5</td></tr>
+</table>
+
+
+<h2>Приклад 3</h2>
+
+<p>Надрукувати  в числа у вигляді таблиці:</p>
+<ul>
+  1  <br>
+  1 2 <br>
+  1 2 3 <br>
+  1 2 3 4<br>
+  1 2 3 4 5<br>
+</ul>
+<p>Ясно,  що витків зовнішнього циклу повинно бути 5, бо потрібно надрукувати 5 рядків. Тобто схематично програма буде така:</p>
+
+</p>
+<h3>Програма схематично</h3>
+<table align=center>
+<tr><td>
+Program b;<br>
+var i,j:byte;<br>
+begin<br>
+for i:=1 to 5 do<br>
+begin<br>
+writeln;<br>
+...<br>
+end;<br>
+end.
+</td></tr>
+</table>
+<p>
+Тепер потрібно з’ясувати як зв’язані номер рядку та числа, які в ньому друкуються, тобто потрібно з’ясувати, який внутрішній цикл буде замість трьох крапок. Для цього складемо таблицю:
+</p>
+<table align=center>
+<tr><th rowspan=2>Номер рядку i </th><th rowspan=2> Числа, які друкуються у цьому рядку </th><th rowspan=2> Цикл, який виводить ці числа </th><th colspan=2> Значення параметра j у циклі </th></tr>
+<tr><th>Початкове </th><th> Кінцеве</th></tr> 
+<tr><td>1</td><td>1 </td><td>for j:=1 to 1 do <br>write(j,' ')</td><td>1</td><td>1</td></tr>
+<tr><td>2</td><td>1 2 </td><td>for j:=1 to 2 do <br>write(j,' ')</td><td>1</td><td>2</td></tr>
+<tr><td>3</td><td>1 2 3 </td><td>for j:=1 to 3 do <br>write(j,' ')</td><td>1</td><td>3</td></tr>
+<tr><td>4</td><td>1 2 3 4 </td><td>for j:=1 to 4 do <br>write(j,' ')</td><td>1</td><td>4</td></tr>
+<tr><td>5</td><td>1 2 3 4 5</td><td>for j:=1 to 5 do <br>write(j,' ')</td><td>1</td><td>5</td></tr>
+<tr><td>Висновок </td><td>&nbsp;</td><td>&nbsp;</td><td>Завжди 1</td><td>Співпадає з номером рядку</td></tr>
+</table>
+<p>
+З цієї таблиці ясно, що для i – го рядку, щоб надрукувати числа 1 2... i потрібен цикл for j:=1 to  i do write(j,' ').  Остаточно програма має вигляд:
+</p>
+<h3>Програма остаточно</h3>
+<table align=center>
+<tr><td>
+Program b;<br>
+var i,j:byte;<br>
+begin<br>
+for i:=1 to 5 do<br>
+begin<br>
+writeln;<br>
+for j:=1 to i do write(j,' ')<br>
+end;<br>
+end.
+</td></tr>
+</table>
+
+<h2>Приклад 4</h2>
+
+<p>Надрукувати  в числа у вигляді таблиці:</p>
+<ul>
+  5 4 3 2 1  <br>
+  5 4 3  2 <br>
+  5 4 3 <br>
+  5 4<br>
+  5<br>
+</ul>
+
+<p>
+Ясно,  що витків зовнішнього циклу повинно бути 5, бо потрібно надрукувати 5 рядків. Тобто схематично програма буде така ж сама, як і у  попередньому прикладі.
+</p>
+<p>
+Тепер потрібно з’ясувати як зв’язані номер рядку та числа, які в ньому друкуються, тобто потрібно з’ясувати, який внутрішній цикл буде замість трьох крапок. Для цього складемо таблицю:
+</p>
+<table align=center>
+<tr><th rowspan=2>Номер рядку i </th><th rowspan=2> Числа, які друкуються у цьому рядку </th><th colspan=2> Значення параметра j у циклі </th></tr>
+<tr><th>Початкове </th><th> Кінцеве</th></tr> 
+<tr><td>1</td><td>5 4 3 2 1 </td><td>5</td><td>1</td></tr>
+<tr><td>2</td><td>5 4 3 2 </td><td>5</td><td>2</td></tr>
+<tr><td>3</td><td>5 4  3 </td><td>5</td><td>3</td></tr>
+<tr><td>4</td><td>5 4 </td><td>5</td><td>4</td></tr>
+<tr><td>5</td><td> 5</td><td>5</td><td>5</td></tr>
+<tr><td>Висновок </td><td>&nbsp;</td><td>Завжди 5</td><td>Співпадає з номером рядку</td></tr>
+</table>
+<p>
+З цієї таблиці ясно, що для i – го рядку, щоб надрукувати числа потрібен зворотній цикл  for j:=5 downto i do write(j,' ').  Остаточно програма має вигляд:
+</p>
+<h3>Програма остаточно</h3>
+<table align=center>
+<tr><td>
+Program c;<br>
+var i,j:byte;<br>
+begin<br>
+for i:=1 to 5 do<br>
+begin<br>
+writeln;<br>
+for j:=5 downto i do write(j,' ')<br>
+end;<br>
+end.
+</td></tr>
+</table>
+
+<h2>Приклад 5</h2>
+<p>Надрукувати  в числа у вигляді таблиці:</p>
+<ul>
+  3 3 3 3 3  <br>
+  4 4 4 4<br>
+  5 5 5<br>
+  6 6<br>
+  7<br>
+</ul>
+<p>
+Ясно,  що витків зовнішнього циклу повинно бути 5, бо потрібно надрукувати 5 рядків. Тобто схематично програма буде така ж сама, як і у  першому прикладі.
+</p>
+<p>
+Тепер потрібно з’ясувати як зв’язані номер рядку та числа, які в ньому друкуються, тобто потрібно з’ясувати, який внутрішній цикл буде замість трьох крапок. Ясно, що раз у кожному рядку друкуються однакові числа, то повинен  виводитись на екран не вираз, що містить змінну j, а вираз, що містить змінну i. Щоб з’ясувати, який це буде вираз  складемо таблицю:
+</P>
+<table align=center>
+<tr><th rowspan=2>Номер рядку i </th><th rowspan=2> Числа, які друкуються у цьому рядку </th><th colspan=2> Значення параметра j у циклі  (кількість чисел)</th></tr>
+<tr><th>Початкове </th><th> Кінцеве</th></tr> 
+<tr><td>1</td><td>3 3 3 3 3 </td><td>1</td><td>5</td></tr>
+<tr><td>2</td><td>4 4 4 4 </td><td>1</td><td>4</td></tr>
+<tr><td>3</td><td>5 5 5 </td><td>1</td><td>3</td></tr>
+<tr><td>4</td><td>6 6 </td><td>1</td><td>2</td></tr>
+<tr><td>5</td><td> 7</td><td>1</td><td>1</td></tr>
+<tr><td>Висновок </td><td>На кожному рядку друкуються числа i+2</td><td>Завжди 1</td><td>6-i</td></tr>
+</table>
+<p>
+З цієї таблиці ясно, що у i – му рядку, друкуються числа и числа i+2. Кількість чисел у i – му рядку  6-i. Тобто внутрішній цикл буде таким: for j:=1 to 6-i do write(i+2,' ').  Остаточно програма має вигляд:
+</p>
+<h3>Програма остаточно</h3>
+<table align=center>
+<tr><td>
+Program d;<br>
+var i,j:byte;<br>
+begin<br>
+for i:=1 to 5 do<br>
+begin<br>
+writeln;<br>
+for j:=1 to 6-i do write(i+2,' ')<br>
+end;<br>
+end.
+</td></tr>
+</table>
+<h2>Приклад 6</h2>
+<p>Надрукувати  в числа у вигляді таблиці:</p>
+<ul>
+ 0 1 2 3 4<br>
+0 0 0 0<br>
+9 0 1 2<br>
+0 0 0<br>
+8 9 0<br>
+0 0<br>
+7 8<br>
+0<br>
+6<br>
+</ul>
+<p>
+У цій задачі  за кожний виток зовнішнього циклу виводиться на екран  не один, а два рядку:
+</p>
+<table align=center>
+<tr><th>Номер витку <br>зовнішнього циклу</th><th>Числа, що виводяться</th></tr>
+<tr><td>1</td><td>0 1 2 3 4<br>0 0 0 0</td></tr>
+<tr><td>2</td><td>9 0 1 2<br>0 0 0</td></tr>
+<tr><td>3</td><td>8 9 0<br>0 0</td></tr>
+<tr><td>4</td><td>7 8<br>0</td></tr>
+<tr><td>5</td><td>6</td></tr>
+</table>
+<p>
+Серед цих чисел є рядки з нулями і з числами. Ці рядки друкуються різними циклами, кожний починається з краю екрана. 
+</p>
+<p>
+Тобто схематично програма буде така:
+</p>
+<h3>Програма схематично</h3>
+<table align=center>
+<tr><td>
+Program f;<br>
+var i,j:byte;<br>
+begin<br>
+for i:=1 to 5 do<br>
+begin<br>
+writeln;<br>
+for j:= ...рядок з числами<br>
+writeln;<br>
+for j:=...рядок з нулями<br>
+end;<br>
+end.
+</td></tr>
+</table>
+<p>
+Розіб’ємо нашу таблицю на дві:
+</p>
+<table align=center>
+<tr><th>Номер витку <br>зовнішнього циклу	</th><th>Перший внутрішній цикл</th><th>Другий внутрішній цикл</th></tr>
+<tr><td>1</td><td>0 1 2 3 4</td><td>	0 0 0 0</td></tr>
+<tr><td>2</td><td>9 0 1 2	</td><td>0 0 0</td></tr>
+<tr><td>3</td><td>8 9 0	</td><td>0 0</td></tr>
+<tr><td>4</td><td>7 8	</td><td>0</td></tr>
+<tr><td>5</td><td>6	</td><td>&nbsp;</td></tr>
+</table>
+<p>
+Тепер потрібно з’ясувати як зв’язані параметр зовнішнього циклу та числа, які  друкуються першим та другим внутрішніми циклами, тобто потрібно з’ясувати, які внутрішні  цикли будуть замість трьох крапок.
+</p>
+<p>
+Спочатку запишемо цикл, який друкує рядки з нулями. Для цього складемо таблицю:
+</p>
+<table align=center>
+<tr><th rowspan=2>Номер рядку i </th><th rowspan=2> Числа, які друкуються у цьому рядку </th><th rowspan=2> Цикл, який виводить ці числа </th><th colspan=2> Значення параметра j у циклі </th></tr>
+<tr><th>Початкове </th><th> Кінцеве</th></tr> 
+<tr><td>1</td><td>0 0 0 0 </td><td>for j:=1 to 4 do <br>write(0,' ')</td><td>1</td><td>4</td></tr>
+<tr><td>2</td><td>0 0 0 </td><td>for j:=1 to 3 do <br>write(0,' ')</td><td>1</td><td>3</td></tr>
+<tr><td>3</td><td>0 0</td><td>for j:=1 to 2 do <br>write(0,' ')</td><td>1</td><td>2</td></tr>
+<tr><td>4</td><td>0</td><td>for j:=1 to 1 do <br>write(0,' ')</td><td>1</td><td>1</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>for j:=1 to 0 do <br>write(0,' ')</td><td>1</td><td>0</td></tr>
+<tr><td>Висновок </td><td>&nbsp;</td><td>&nbsp;</td><td>Завжди 1</td><td>5 – i</td></tr>
+</table>
+<p>
+Добавимо вивід нулів і схематично програма буде така:
+</p>
+<h3>Програма схематично</h3>
+<table align=center>
+<tr><td>
+Program f;<br>
+var i,j:byte;<br>
+begin<br>
+for i:=1 to 5 do<br>
+begin<br>
+writeln;<br>
+for j:= ...рядок з числами<br>
+writeln;<br>
+for j:=1 to 5-i do write(0,' ')<br>
+end;<br>
+end.
+</td></tr>
+</table>
+<p>
+Залишилось написати цикл, який виводить інші числа. Для цього складемо таблицю:
+</P>
+<table align=center>
+<tr><th rowspan=2> i </th><th rowspan=2>Числа, які друкуються </th><th rowspan=2>Для цих чисел друкується остання цифра </th><th colspan=4> Значення параметра у внутрішньому  циклі </th></tr>
+<tr><th colspan=2>Початкове</th><th colspan=2>Кінцеве</th></tr>
+<tr><td>1</td><td>0 1 2 3 4</td><td>10 11 12 13 14</td><td>10</td><td>10+1=11</td><td>14</td><td>16-2*1=14</td></tr>
+<tr><td>2</td><td>9 0 1 2</td><td>9 10 11 12</td><td>9</td><td>9+2=11</td><td>12</td><td>16-2*2=12</td></tr>
+<tr><td>3</td><td>8 9 0</td><td>8 9 10</td><td>8</td><td>8+3=11</td><td>10</td><td>16-2*3=10</td></tr>
+<tr><td>4</td><td>7 8</td><td>7 8</td><td>7</td><td>7+4=11</td><td>8</td><td>16-2*4=8</td></tr>
+<tr><td>5</td><td>6 </td><td>6</td><td> 6</td><td>6+5=11</td><td>6</td><td>16-2*5=6</td></tr>
+<tr><td>&nbsp;</td><td>Висновок  </td><td>Друкується j mod 10</td><td>&nbsp;</td><td>11-i</td><td>&nbsp;</td><td>16-2*i</td></tr>
+</table>
+<p>
+  Остаточно програма має вигляд:
+</p>
+<h3>Програма остаточно</h3>
+<table align=center>
+<tr><td>
+Program f;<br>
+var i,j:byte;<br>
+begin<br>
+for i:=1 to 5 do<br>
+begin<br>
+writeln;<br>
+for j:=11-i to 16-2*i do write(j mod 10,’ ‘); <br>
+writeln;<br>
+for j:=1 to 5-i do write(0,' ')<br>
+end;<br>
+end.
+</td></tr>
+</table>
+<h2>Варіанти задач</h2>
+<table align=center>
+<tr><th>№ варіанту</th><th>Таблиця</th><th>№ варіанту</th><th>Таблиця</th></tr>
+<tr><td>1</td><td>2 2 2 2 2<br>
+2 2 2 2<br>
+2 2 2<br>
+2 2<br>
+2
+</td><td>2</td><td>0<br>
+0 0<br>
+0 0 0<br>
+0 0 0 0<br>
+0 0 0 0 0
+</td></tr>
+<tr><td>3</td><td>1<br>
+2 2<br>
+3 3 3<br>
+4 4 4 4<br>
+5 5 5 5 5
+</td><td>4</td><td>1 1 1 1 1<br>
+2 2 2 2<br>
+3 3 3<br>
+4 4<br>
+5
+</td></tr>
+<tr><td>5</td><td>5 5 5 5 5<br>
+4 4 4 4<br>
+3 3 3<br>
+2 2<br>
+1
+</td><td>6</td><td>5<br>
+6 6 <br>
+7 7 7<br>
+8 8 8 8<br>
+9 9 9 9 9
+</td></tr>
+<tr><td>7</td><td>1 2 3 4 5<br>
+1 2 3 4<br>
+1 2 3<br>
+1 2<br>
+1
+</td><td>8</td><td>5<br>
+4 5<br>
+3 4 5<br>
+2 3 4 5<br>
+1 2 3 4 5<br>
+</td></tr>
+<tr><td>9</td><td>0<br>
+1 0<br>
+2 1 0<br>
+3 2 1 0<br>
+4 3 2 1 0
+</td><td>10</td><td>6 5 4 3 2<br>
+5 4 3 2<br>
+4 3 2<br>
+3 2<br>
+2
+</td></tr>
+<tr><td>11</td><td>1<br>
+0<br>
+2 2<br>
+0 0<br>
+3 3 3<br>
+0 0 0<br>
+4 4 4 4<br>
+0 0 0 0<br>
+5 5 5 5 5<br>
+0 0 0 0 0	
+</td><td>12</td><td>5 4 3 2 1<br>
+0 0 0 0<br>
+5 4 3 2<br>
+0 0 0<br>
+5 4 3<br>
+0 0<br>
+5 4<br>
+0
+</td></tr>
+<tr><td>13</td><td>8 9 0 1 2<br>
+8 9 0 1<br>
+8 9 0<br>
+8 9<br>
+8 
+</td><td>14</td><td>3<br>
+2 3<br>
+1  2 3<br>
+0 1 2 3<br>
+9 0 1 2 3
+</td></tr>
+<tr><td>15</td><td>0<br>
+1 0 9<br>
+2 1 0 9 8<br>
+3 2 1 0 9 8 7<br>
+4 3 2 1 0 9 8 7 6
+</td><td>16</td><td>5<br>
+3 4 5<br>
+1 2 3 4 5<br>
+9 0 1 2 3 4 5<br>
+7 8 9 0 1 2 3 4 5
+</td></tr>
+</table>
+
+<p>
+<a href='4_15.html'> Назад </a>
+<a href='Menu4.html'> Зміст </a>
+<a href='4_17.html'> Вперед </a>
+</p>
+</body>
+</html>
+
+ 
+
+
+
+
+
+

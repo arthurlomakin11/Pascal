@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<LINK REL=STYLESHEET TYPE="text/css" href="mystyle.css">. 
+</head>
+
+
+<body>
+
+
+<p> <a href="3_4.html"> Назад </a> 
+    <a href="Menu3.html">Зміст </a> 
+    <a href="3_6.html">Вперед </a> 
+
+
+
+<h1> Логічний тип даних </h1>
+
+
+
+<p> Умову інакше називають логічним виразом. Логічний вираз має тільки два значення TRUE (вірно) та FALSE (невірно). Значення логічного типу можна присвоювати змінній логічного типу.
+
+<p> <b> Опис. </b>
+
+<p>var x,y,z:boolean; 
+
+<p> <b> Присвоювання значень. </b> 
+
+<p>X:=TRUE; y:=2>5; z:=a=b;
+
+<p> <b> Вивід. </b>
+
+<p> writeln(y);
+
+<p> Writeln(a>b);
+
+
+<p> Коли логічна змінна має значення TRUE, її внутрішнє представлення 1.
+
+<p> Коли логічна змінна має значення FALSE, її внутрішнє представлення 0.
+
+
+<h2> Приклади </h2>
+
+
+<table align=center>
+
+
+<tr> <th> Програма </th> 
+
+     <th> Пояснення </th>
+
+     <th> Результат роботи </th>
+</tr>
+
+
+<tr> <td> Const a=2; b=10; <br>
+          var x:boolean; <br>
+          begin <br>
+          x:=a < b; <br>
+          Writeln(x); <br>
+          end. <br>
+
+     </td> 
+
+     <td valign=top> a=2; b=10, тому a < b 
+          вірна нерівність, тому x має значення TRUE,
+          яке і виводиться на екран </td>
+
+     <td> TRUE </td>
+</tr>
+
+
+<tr> <td> Const a=TRUE; b=FALSE; <br>
+          Begin <br>
+          writeln(b > a); <br> 
+          end. <br>
+ </td> 
+
+     <td> a=TRUE, тобто 1, b=FALSE, тобто 0, 
+                     тому b > a невірна нерівність, тобто
+                     такий логічний вираз має значення FALSE </td>
+
+     <td> FALSE </td>
+</tr>
+
+
+<tr> <td> Const X=-2; y=2; <br>
+          Var Z:Boolean; <br>
+          Begin <br>
+          Z:=sqr(x)-sqr(y)=0;  writeln(z); <br>
+          end. <br>
+ </td> 
+
+     <td> X=-2; y=2, тому sqr(x)-sqr(y)=0 вірна
+                     рівність, тому Z має значення TRUE </td>
+
+     <td> TRUE </td>
+</tr>
+
+
+<tr> <td> Const F=7; D=5; <br>
+          Var Z:Boolean; <br>
+          Begin <br> 
+          Z:=1/F > 1/D; <br> 
+          writeln(z); <br>
+          end. <br>
+ </td> 
+
+     <td> F=7; D=5, F > D, тому 1/F<1/D, 
+                     тому 1/F > 1/D невірно, тому Z має 
+                     значення FALSE  </td>
+
+     <td> FALSE </td>
+</tr>
+</table>
+
+
+
+<p> <a href="3_4.html"> Назад </a> 
+    <a href="Menu3.html">Зміст </a> 
+    <a href="3_6.html">Вперед </a> 
+</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

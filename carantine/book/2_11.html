@@ -1,0 +1,97 @@
+<body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<LINK REL=STYLESHEET TYPE="text/css" href="mystyle.css">
+</head>
+<body>
+
+
+<p>
+<a href='2_10.html'>Назад</a>
+<a href='2_12.html'>Вперед</a>
+<a href='menu2.html'>Зміст</a>
+</p>
+<h2>Правила запису складних математичних виразів<br> у тексті програми</h2>
+<table align=center>
+<tr >
+<th><ul>
+<li>Знак помножити *, ставиться завжди;
+<li>Дробова риска замінюється знаком /
+<li>Аргументи математичних функцій записуються у дужках.
+<li>Якщо в чисельнику сума або різниця, то він береться у дужки.
+<li>Якщо в знаменнику будь-яка дія, то він береться у дужки.
+<li>Запис можна переносити на наступний рядок </th>
+</table>
+<h2>Стандартні математичні функції </h2>
+
+<table align=center>
+ <tr >
+   <th >Звичайний
+  запис  </th>
+  <th>Запис на Паскалі </th>
+<tr>
+<td><img src="2_11/image002.gif" width=30 height=40></td><td>Abs(x)</td>
+<tr>
+<td><img src="2_11/image004.gif" width=30 height=40></td><td>Sqr(x)</td>
+<tr>
+<td><img src="2_11/image006.gif" width=30 height=40></td><td>Sqrt(x)</td>
+</table>
+
+<h3>Приклади запису складних математичних виразів у <br>тексті програми</h3>
+<table align=center>
+ <tr >
+  <th >Звичайний
+  запис  </th>
+  <th>Запис на Паскалі </th>
+<tr>
+<td><img src="2_11/image008.gif" width=167 height=83></td><td>Sqrt(1+abs(x-5))-(5.4*sqr(x)*x+1)/(2*x)</td>
+<tr>
+<td><img src="2_11/image010.gif" width=167 height=83></td><td>Sqr(z+67.2)-sqrt(abs(x))/<br>
+(sqr(x-z)*sqr(x-z))
+</td>
+</table>
+<h3>Функції перетворення типів </h3>
+<table align=center>
+<tr>
+<th>Програма</th><th>Результат</th><th>Пояснення</th>
+<tr>
+<td>Program P1;<br>
+Var x:real;y:integer;<br>
+Begin<br>
+X:=3.7;y:=round(x);<br>
+Writeln(y);<br>
+End.
+</td><td>4</td><td> Функція round округлює до цілого.<br> Результат цілий.</td>
+    <tr>
+<td>Program P2;<br>
+Var x:real;y:integer;<br>
+Begin<br>
+X:=3.9;y:=trunc(x);<br>
+Writeln(y);<br>
+End.
+</td><td>3</td><td> Функція trunc відкидає дробову <br>частину. Результат <br>цілий.</td>
+      <tr>
+<td>Program P3;<br>
+Var x,y:real;<br>
+Begin<br>
+X:=3.9;y:=frac(x);<br>
+Writeln(y:1:2);<br>
+End.
+</td><td>0.90</td><td>Функція frac вибирає дробову<br> частину.</td>
+   <tr>
+<td>Program P4;<br>
+Var x,y:real;<br>
+Begin<br>
+X:=5.8; y:=int(x);<br>
+Writeln(y:1:2);<br>
+End.<br>
+</td><td>5.00</td><td>Функція int відкидає дробову <br>частину. Результат <br>дійсний.</td>
+
+</table>
+<p>
+<a href='2_10.html'>Назад</a>
+<a href='2_12.html'>Вперед</a>
+<a href='menu2.html'>Зміст</a>
+</p>
+</body>
+</html>

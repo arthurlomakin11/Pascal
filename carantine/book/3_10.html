@@ -1,0 +1,155 @@
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<LINK REL=STYLESHEET TYPE="text/css" href="mystyle.css">	
+
+</head>
+<body>
+<p>
+<A href="3_9.HTML"> Назад</a>
+<A href="MENU3.HTML">Зміст </a>
+<A href="3_11.HTML"> Вперед</a>
+</p>
+<h1> Неповний умовний оператор</h1>
+<Table align=center>
+<tr><td><pre>
+IF B THEN 
+  BEGIN 
+    S1;S2;…Sn; 
+  END;
+T1;</pre>
+</td>
+<tr>
+</table>
+
+ <P> Якщо умова B вірна, то  виконуються оператори S1, S2,… Sn, а потім оператор T1, що слідує за оператором  IF</p>
+<p> Якщо умова не вірна, то виконується  тільки оператор T1, що слідує за оператором  IF.</p>
+<p>Написана вище конструкція на блок-схемі відображається так:</p>
+<h4 align=center><img src="3_10/image001.gif"></h4>
+
+<h2> Приклади роботи оператору </h2> 
+<p>Оператори, що виконуються у програмі виділені жирним.</p>
+<table align=center>
+<tr> <th> Програма </th> <th>Пояснення </th> <th width=25&>Результат роботи програми</th></tr>
+<tr> <td> Program p1; <br>
+Var x:integer; <br>
+begin <br>
+<b>X:=-5;<br>
+IF X<0 THEN <br>
+BEGIN  <br>
+x:=x+5; <br>
+writeln(x) <br>
+END;<br>
+Writeln(‘кінець’)</b>
+End.<br> </td> <td>Оскільки  X=-5, це <0<br> (умова вірна), то <br>оператори, що стоять<br>після THEN виконуються,<br> тобто<br> x:=x+5;writeln(x). Потім <br> виконується оператор <br> Writeln(‘кінець’).<br> </td> <td>0 <br>
+кінець
+</td> </tr>
+<tr> <td>Program p2;<br>
+Var x:integer;<br>
+begin <br>
+<b>X:=5; <br>
+IF X<0 </b>THEN <br>
+BEGIN  <br>
+x:=x+5;<br>
+writeln(x) <br>
+END;<br>
+<b>Writeln(‘кінець’)</b>
+End.<br>  </td> <td> Оскільки  X=5, це >=0 <br> (умова не вірна), то <br> оператори, що стоять<br> після THEN не<br> виконуються, <br>а виконається тільки оператор <br>Writeln(‘кінець’).<br></td> <td>кінець</td> </tr>
+</table>
+<h3>Блок-схема програми</h3>
+
+<h4 align=center><img src="3_10/image002.gif"></h4>
+<h2>Зауваження</h2> 
+<ol> <li>Неповні умовні оператори використовуються, якщо, в залежності від деяких умов, потрібно вибрати один з декількох варіантів. 
+<li>Неповних умовних операторів повинно бути стільки, скільки маємо варіантів, інакше може статися випадок, коли не виконається ні один з умовних операторів. Оператори, що виконуються виділено жирним.
+<table align=center>
+<tr><th> Програма </th> <th>На екрані </th></tr>
+<tr><td>
+Program p1;<br>
+<b>Const a=0;</b><br>
+begin<br>
+<b>if a=1 </b>then writeln(1);<br>
+<b>if a=2 </b>then writeln(2);<br>
+<b>if a=3 </b>then writeln(3);<br>
+end.	
+</td><td>
+Нічого
+</td></tr>
+<tr><td>
+Program p2;<br>
+<b>Const a=0;</b><br>
+var b:byte;<br>
+begin<br>
+<b>b:=10;<br>
+if a=1 </b>then writeln(1);<br>
+<b>if a=2 </b>then writeln(2);<br>
+<b>if a=3</b> then writeln(3);<br>
+<b>writeln(b);</b><br>
+end.	
+</td><td>
+10
+</td><tr>
+</table>
+<li>Умови потрібно складати так, щоб вони охоплювали всі можливі випадки та не перетиналися, інакше може статися випадок, коли виконається декілька умовних операторів. Оператори, що виконуються виділено жирним.
+<table align=center>
+<tr><th> Програма </th> <th>На екрані </th></tr>
+<tr><td>
+Program p3;<br>
+<b>Const a=0;</b><br>
+begin<br>
+<b>if a=0 then writeln(1);<br>
+if a<1 then writeln(2);</b><br>
+end.
+</td><td>
+1 <br>2
+</td></tr>
+<tr><td>
+Program p4;<br>
+<b>Const a=0;</b><br>
+var b:byte;<br>
+begin<br>
+<b>if a>=0 then b:=8;<br>
+if a<=0 then b:=4;<br>
+writeln(b);</b> <br>
+end.
+</td><td>
+4
+</td><tr>
+</table>
+<li>Неможна одночасно використовувати повний та неповні умовні опертори, інакше може статися випадок, коли виконається який-небудь з неповних операторів та оператор, що стоїть після else  у повному умовному  операторі. Оператори, що виконуються виділено жирним.
+<table align=center>
+<tr><th> Програма </th> <th>На екрані </th></tr>
+<tr><td>
+Program p5;<br>
+<b>Const a=5;</b><br>
+begin<br>
+<b>if a>=0 then writeln(8);<br>
+if a<=0 </b>then writeln(4)<br>
+<b>else writeln(7);</b><br>
+end.
+</td><td>
+8<br>7
+</td></tr>
+<tr><td>
+Program p6;<br>
+<b>Const a=5;</b><br>
+var b:byte;<br>
+begin<br>
+<b>if a>=0 then b:=8;<br>
+if a<=0 </b>then b:=4 <br>
+<b>else b:=7;<br>
+writeln(b); </b><br>
+end.
+</td><td>
+7
+</td><tr>
+</table>
+</ol>
+<p>
+<A href="3_8.HTML"> Назад</a>
+<A href="MENU3.HTML">Зміст </a>
+<A href="3_10.HTML"> Вперед</a>
+</p>
+</body>
+</html>
+

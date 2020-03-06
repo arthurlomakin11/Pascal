@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<LINK REL=STYLESHEET TYPE="text/css" href="mystyle.css">
+</head>
+<body>
+<p>
+<a href='2_4.html'>Назад</a>
+<a href='2_6.html'>Вперед</a>
+<a href='menu2.html'>Зміст</a>
+</p>
+
+<h1>Зауваження до операторів присвоювання </h1>
+<ol><li>Кожне наступне присвоювання значення змінній, стирає попереднє значення.
+<table><tr><th>Програма</th><th>Екран</th></tr>
+<tr><td>Program P1;<br>				
+Var x:integer;<br>
+Begin<br>
+X:=10;x:=5;Writeln(x);<br>
+End.<br>
+</td><td>5</td></tr>
+</table>
+<li>Щоб вивести на екран кожне значення змінної, потрібно декілька разів виконати оператор виводу.
+<table><tr><th>Програма</th><th>Екран</th></tr>
+<tr><td>Program P2;<br>				
+Var x:integer;<br>
+Begin<br>
+X:=10; Writeln(x);<br>
+x:=5;Writeln(x);<br>
+End.<br>
+</td><td>10<br>
+5</td></tr>
+</table>
+<li>Оператор X:=X+5 виконує наступне: до старого значення X додає 5 та записує отриманий результат знов у змінну X.
+<table><tr><th>Програма</th><th>Екран</th></tr>
+<tr><td>Program P3;<br>				
+Var x:integer;<br>
+Begin<br>
+X:=10;x:=x+7;Writeln(x);<br>
+End.<br>
+</td><td>17</td></tr>
+</table>
+<li>Оператор y:=x+1 змінює значення  y, а не x. У цьому випадку значення  x не змінюється.
+<table><tr><th>Програма</th><th>Екран</th></tr>
+<tr><td>Program P4;<br>				
+Var x:integer;<br>
+Begin<br>
+X:=10;y:=5; y:=x+1;<br>
+Writeln(x,’ ‘,y);<br>
+End.<br>
+</td><td>10 11</td></tr>
+</table>
+<li>Оператори y:=x та x:=y виконують різні дії. Опертор y:=x змінює значення y, а оператор x:=y змінює значення x.
+<table><tr><th>Програма</th><th>Екран</th></tr>
+<tr><td>Program P5;<br>				
+Var x,y:integer;<br>
+Begin<br>
+X:=10;y:=5; y:=x;<br>
+Writeln(x,’ ‘,y);<br>
+End.<br>
+</td><td>10 10</td></tr>
+<tr><td>Program P6;<br>
+Var x,y:integer;<br>
+Begin<br>
+X:=10;y:=5; x:=y;<br>
+Writeln(x,’ ‘,y);<br>End.
+</td><td>5 5</td></tr>
+</table>
+<p>
+<a href='2_4.html'>Назад</a>
+<a href='2_6.html'>Вперед</a>
+<a href='menu2.html'>Зміст</a>
+</p>
+</body>
+</html>

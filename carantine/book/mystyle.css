@@ -1,0 +1,32 @@
+body {
+	color:#909000;
+	background-color: #FFFFCC;
+	line-height: 2em;
+}  
+H1 {color:Indianred; text-align:center; font-family:Arial;font-style:italic; font-size:28pt; }
+	
+H2 {color:Darkgreen; text-align:center; font-family:arial;font-style:italic;font-size:22pt;}
+H3 {color:brown; text-align:center; font-family:arial;font-size:18pt;}
+
+	
+P {color:black; font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 14pt; text-align:justify; line-height: 14pt;line-height: 1.5em;}
+
+Table {
+	font-family:"Courier New";
+	padding: 20px;
+	border: thin solid #CD5C5C;
+	margin: 10px;
+	font-size: 18px;
+	color: #000000;
+	line-height: 1.5em;
+}      
+
+td {
+border: thin solid #CD5C5C;
+}
+  th {
+border: thin solid #CD5C5C;
+}
+UL {color:black; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14pt; line-height: 2em; }         
+OL {color:black; font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 14pt; line-height: 2em;}         
+li {color:black;  text-align=left; ont-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14pt; line-height: 2em;}
